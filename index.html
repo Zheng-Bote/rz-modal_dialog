@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="ZHENG Robert" />
+
+    <title>Web Component</title>
+
+    <meta name="description" content="Web Component for HTML footer" />
+    <meta name="version" content="v0.1.0" />
+    <meta name="author" content="ZHENG Robert" />
+    <meta name="date" content="2016-01-02T01:30:00+01:00" />
+
+    <link rel="alternate icon" href="./favicon.ico" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link href="../assets/css/index.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body id="body">
+    <main>
+      <h1>Web-Component &raquo;rz-modal_dialog&laquo;</h1>
+      <article>
+        <h2>A Web Component for dialog or modal</h2>
+        <p class="brief">steering via properties</p>
+        <p>
+          show or hide dialog or modal, with/without footer and red/yellow/green
+          title
+        </p>
+        <section>
+          <h3>default</h3>
+          <p>
+            <code>
+              &lsaquo;rz-modal_dialog id="rz-dialog" title="my title" body="my
+              body" footer="my footer"&rsaquo;&lsaquo;/rz-modal_dialog&rsaquo;
+            </code>
+          </p>
+        </section>
+        <section>
+          <h3>no footer</h3>
+
+          <p>
+            <code>
+              &lsaquo;rz-modal_dialog id="rz-dialog" title="my title" body="my
+              body" footer=""&rsaquo;&lsaquo;/rz-modal_dialog&rsaquo;
+            </code>
+          </p>
+          <br />
+          <p>
+            <code>
+              &lsaquo;rz-modal_dialog id="rz-dialog" title="my title" body="my
+              body"&rsaquo;&lsaquo;/rz-modal_dialog&rsaquo;
+            </code>
+          </p>
+        </section>
+        <section>
+          <h3>example</h3>
+          <button class="btn" id="rz_btn_dialog_show">show dialog</button>
+          <button class="btn" id="rz_btn_modal_show">show modal</button>
+          &nbsp;
+          <button class="btn" id="rz_btn_text">change text</button>
+          <button class="btn" id="rz_btn_no_footer">no footer</button>
+          &nbsp;
+          <button class="btn" id="rz_btn_red">change red</button>
+          <button class="btn" id="rz_btn_yellow">change yellow</button>
+          <button class="btn" id="rz_btn_green">change green</button>
+
+          <rz-modal_dialog
+            id="rz-dialog"
+            title="my title"
+            body="my body"
+            footer="my footer"
+          ></rz-modal_dialog>
+        </section>
+      </article>
+    </main>
+  </body>
+  <script src="./assets/js/rz-modal.js"></script>
+
+  <script>
+    /* ##### the buttons ##### */
+    document
+      .getElementById("rz_btn_dialog_show")
+      .addEventListener("click", () => {
+        document.getElementById("rz_modal").show();
+        document.getElementById("rz_modal_header").classList.add(this.color);
+      });
+    document
+      .getElementById("rz_btn_modal_show")
+      .addEventListener("click", () => {
+        document.getElementById("rz_modal").showModal({ backdrop: true });
+      });
+
+    /* ##### examples change props ##### */
+    document.getElementById("rz_btn_text").addEventListener("click", () => {
+      document.getElementById("rz-dialog").title = "new Title";
+      document.getElementById("rz-dialog").body = "new Body";
+      document.getElementById("rz-dialog").footer = "new Footer";
+    });
+    document
+      .getElementById("rz_btn_no_footer")
+      .addEventListener("click", () => {
+        document.getElementById("rz-dialog").footer = "";
+      });
+
+    document.getElementById("rz_btn_red").addEventListener("click", () => {
+      document.getElementById("rz-dialog").color = "red";
+      document.getElementById("rz-dialog").title = "critical";
+      document.getElementById("rz-dialog").body = "critical text";
+    });
+    document.getElementById("rz_btn_yellow").addEventListener("click", () => {
+      document.getElementById("rz-dialog").color = "yellow";
+      document.getElementById("rz-dialog").title = "warning";
+      document.getElementById("rz-dialog").body = "warning text";
+    });
+    document.getElementById("rz_btn_green").addEventListener("click", () => {
+      document.getElementById("rz-dialog").color = "green";
+      document.getElementById("rz-dialog").title = "ok";
+      document.getElementById("rz-dialog").body = "ok text";
+    });
+    /* ##### examples change props ##### */
+  </script>
+</html>

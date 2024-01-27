@@ -1,0 +1,261 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+@import "CSS/theme.css";
+@import "CSS/primeng.css";
+*/
+
+:root {
+  /* lightgrey */
+  --background-color: oklch(86.69% 0 0);
+  /* lighter grey */
+  --background-color-light: oklch(95.84% 0.004 214.33); /*oklch(95.21% 0 0);*/
+  /* grey */
+  --background-color-dark: oklch(69.09% 0.026 242.51); /*oklch(59.99% 0 0);*/
+
+  --blue-color: oklch(55.08% 0.139 245.43);
+  --dark-blue-color: oklch(45.2% 0.131 251.01);
+  --light-blue-color: oklch(85.62% 0.049 219.65);
+
+  --red-color: oklch(62.8% 0.25768330773615683 29.2338851923426);
+  --yellow-color: oklch(96.8% 0.21100590772552355 109.76923207652125);
+  --green-color: oklch(86.8% 0.156 144.09);
+
+  --universal-margin: 0.5rem;
+  --universal-padding: 0.5rem;
+
+  --heading-ratio: 1.19;
+
+  --border-color: oklch(0% 0 0);
+  --border-style: solid;
+  --border-width: 1px;
+  --border-radius: 5px;
+
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, Roboto, Ubuntu,
+    "Segeo UI", "Helvetica Neue", Arial, sans-serif;
+  --font-color: oklch(0% 0 0);
+  --font-color-invert: oklch(100% 0 0);
+  --font-size-normal: 1rem;
+  --font-size-bigger: 1.5rem;
+  --font-size-small: 0.8rem;
+  --font-size-smaller: 0.5rem;
+
+  --font-size-big-dynamic: clamp(1.5rem, -2.3149rem + 8.8398vw, 2.5rem);
+  --font-size-bigger-dynamic: clamp(1rem, -2.3149rem + 8.8398vw, 2rem);
+  --font-size-normal-dynamic: clamp(1rem, 1.2rem, 1.5rem);
+  --font-size-small-dynamic: clamp(0.6rem, 0.7rem, 0.8rem);
+
+  --color-decent-lightgrey: oklch(86.69% 0 0);
+  --color-decent-8: oklch(0% 0 0 / 80%);
+  --color-decent-5: oklch(0% 0 0 / 50%);
+
+  /* input check/radio */
+  accent-color: oklch(59.99% 0 0);
+}
+
+/* Themes ##### */
+html[data-theme="light"] {
+  background-color: var(--background-color-light);
+  color: var(--font-color);
+
+  a:hover {
+    color: var(--dark-blue-color);
+  }
+}
+
+html[data-theme="dark"] {
+  background-color: var(--background-color-dark);
+  color: var(--font-color-invert);
+
+  a:hover {
+    color: var(--light-blue-color);
+  }
+}
+
+#dark,
+#light {
+  display: none;
+}
+
+/* ##### Themes */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-size: 100vw 100vh;
+  height: 100%;
+
+  color: var(--font-color);
+  font-family: var(--font-family);
+}
+
+header,
+footer {
+  background: oklch(69.09% 0.026 242.51);
+  background: -webkit-linear-gradient(
+    to left,
+    oklch(95.84% 0.004 214.33),
+    oklch(69.09% 0.026 242.51)
+  );
+  background: linear-gradient(
+    to right,
+    oklch(95.84% 0.004 214.33),
+    oklch(69.09% 0.026 242.51)
+  );
+  color: oklch(0% 0 0 / 50%);
+}
+
+/* link ##### */
+a:link,
+a:active,
+a:visited,
+label {
+  color: var(--color-decent-5);
+  font-size: 1rem;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: var(--dark-blue-color);
+}
+a[href^="https"] {
+  padding-right: 1em;
+  background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpolygon%20fill%3D%22blue%22%20points%3D%222%2C2%205%2C2%205%2C3%203%2C3%203%2C9%209%2C9%209%2C7%2010%2C7%2010%2C10%202%2C10%22/%3E%3Cpolygon%20points%3D%226.2%2C2%2010%2C2%2010%2C5.8%208.6%2C4.4%206.5%2C6.5%205.5%2C5.5%207.6%2C3.4%22/%3E%3C/svg%3E")
+    no-repeat right;
+  background-size: 11px auto;
+}
+a[href^="mailto"] {
+  padding-right: 1.2em;
+  background: url("data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2012%2012%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22blue%22%20d%3D%22M1%2C4%20h10%20v6%20h-10z%20l10%2C6m0%2C-6%20l-10%2C6%22/%3E%3C/svg%3E")
+    no-repeat right;
+  background-size: 1rem auto;
+}
+
+/* ##### link */
+
+footer {
+  padding: 5px;
+  font-size: var(--font-size-small-dynamic);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  cursor: pointer;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+footer div {
+  flex-basis: 33.33333%;
+  text-align: center;
+}
+.footer_item a:link {
+  font-size: var(--font-size-small-dynamic);
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+main {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 10px 20px 10px 20px;
+}
+.content {
+  max-height: 100%;
+}
+
+article,
+section {
+  margin: calc(1.5 * var(--universal-margin));
+  border: 1px solid;
+  border-color: var(--background-color);
+  border-radius: 5px;
+
+  padding: 10px;
+}
+
+.content > p,
+article > p,
+section > p {
+  padding: 0 10px 0 12px;
+}
+.content > ul,
+article > ul,
+section > ul {
+  padding: 0 10px 0 20px;
+}
+.content > .brief,
+article > .brief,
+section > .brief {
+  font-size: var(--font-size-small-dynamic);
+  color: var(--color-decent-5);
+  padding: 0;
+}
+.brief::before {
+  content: "» ";
+  color: var(--color-decent-5);
+}
+section .text {
+  padding: 10px;
+  max-width: 80ch;
+  margin: auto;
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+.center {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vcenter {
+  display: flex;
+  align-items: center;
+}
+.right {
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Menlo, Consolas, monospace;
+  font-size: 0.85em;
+}
+code {
+  background: oklch(0% 0 0);
+  color: oklch(92.19% 0.114 196.04);
+  border-radius: var(--universal-border-radius);
+  padding: calc(var(--universal-padding) / 4) calc(var(--universal-padding) / 2);
+  color: aqua;
+}
+kbd {
+  background: var(--fore-color);
+  color: var(--back-color);
+  border-radius: var(--universal-border-radius);
+  padding: calc(var(--universal-padding) / 4) calc(var(--universal-padding) / 2);
+}
+
+button {
+  margin-bottom: 10px;
+}
