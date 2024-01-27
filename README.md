@@ -8,6 +8,10 @@ show or hide dialog or modal, with/without footer and red/yellow/green title
 
 </div>
 
+## Status
+
+![ops](https://img.shields.io/badge/Status-usable-green)
+
 ## Authors
 
 - [@Zheng-Bote](https://www.github.com/Zheng-Bote)
