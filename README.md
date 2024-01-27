@@ -53,12 +53,12 @@ v0.1.0
       </rz-modal_dialog>
 ```
 
-| Parameter | Type     | Description                             |
-| :-------- | :------- | :-------------------------------------- |
-| `title`   | `string` | "<title of dialog or modal>"            |
-| `body`    | `string` | "<content text>"                        |
-| `footer`  | `string` | "<footer text>"                         |
-| `footer`  | `string` | "<>" => no property or empty: no footer |
+| Parameter | Type     | Description                           |
+| :-------- | :------- | :------------------------------------ |
+| `title`   | `string` | "title of dialog or modal"            |
+| `body`    | `string` | "content text"                        |
+| `footer`  | `string` | "footer text"                         |
+| `footer`  | `string` | "" => no property or empty: no footer |
 
 ## Installation
 
